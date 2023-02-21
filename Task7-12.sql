@@ -88,7 +88,7 @@ CREATE TABLE Camels(
 -- 9 задание -----------------------------------------
 
 INSERT Donkeys(Name, BirthDay, A_subtype, A_Type) VALUES
-('Злой', '2017-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Donkeys'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal')),
+('Злой', '2022-02-23',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Donkeys'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal')),
 ('Добрый','2020-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Donkeys'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal'));
 
 INSERT Horses(Name, BirthDay, A_subtype, A_Type) VALUES
@@ -115,26 +115,62 @@ SELECT * FROM Camels;
 
 -- 10 задание ----------------------------------------
 
-delete from Camels where Camel_id > 0;
-select * from Camels;
+DELETE FROM Camels WHERE Camel_id > 0;
 
 create table Pack_Animal_new (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
-select  Name, 
+SELECT  Name,
         BirthDay, 
         A_subtype, 
         A_Type
-from Horses union 
-select  Name,  
+FROM Horses UNION
+SELECT  Name,
         BirthDay,
 		A_subtype, 
         A_Type
-from Donkeys;
+FROM Donkeys;
 
-select * from Pack_Animal_new;
+-- 12 Задание ----------------------------------------
+CREATE TABLE All_Animal_new (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
+SELECT  Name,
+        BirthDay,
+		A_subtype, 
+        A_Type
+FROM cats UNION
+SELECT  Name,
+        BirthDay,
+		A_subtype, 
+        A_Type
+FROM dogs UNION
+SELECT  Name,
+        BirthDay,
+		A_subtype, 
+        A_Type
+FROM hamsters UNION
+SELECT  Name,
+        BirthDay,
+		A_subtype, 
+        A_Type
+FROM horses UNION
+SELECT  Name,
+        BirthDay,
+		A_subtype, 
+        A_Type
+FROM donkeys;
+SELECT * FROM All_Animal_new;
 
--- 11 Задание ----------------------------------------
 
-select * from pets;
+-- 11 Задание --------------------------------------------------------
+
+CREATE TABLE youngAnimals (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
+SELECT  Name,
+        BirthDay,
+		A_subtype, 
+        A_Type,
+        Round((YEAR(CURRENT_DATE()) - YEAR(Birthday)) + (MONTH(CURRENT_DATE() - MONTH(Birthday)))/10, 2) AS age
+FROM All_Animal_new
+WHERE Round((YEAR(CURRENT_DATE()) - YEAR(Birthday)) + (MONTH(CURRENT_DATE() - MONTH(Birthday)))/10, 2) > 1
+	AND Round((YEAR(CURRENT_DATE()) - YEAR(Birthday)) + (MONTH(CURRENT_DATE() - MONTH(Birthday)))/10, 2) < 3;
+ -- select * from youngAnimals;
 
 
 
