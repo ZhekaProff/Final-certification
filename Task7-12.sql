@@ -13,7 +13,7 @@ CREATE TABLE Animals(
 
 INSERT Animals(Animal_type) VALUES
 ('Pets'),
-('PackAnimal'); 
+('Pack_Animal'); 
 
 
 
@@ -85,7 +85,35 @@ CREATE TABLE Camels(
     A_type INT NOT NULL
 );
 
-SELECT * FROM Camels;
-
 -- 9 задание -----------------------------------------
+
+INSERT Donkeys(Name, BirthDay, A_subtype, A_Type) VALUES
+('Злой', '2017-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Donkeys'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal')),
+('Добрый','2020-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Donkeys'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal'));
+
+INSERT Horses(Name, BirthDay, A_subtype, A_Type) VALUES
+('Веселый', '2019-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Horses'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal')),
+('Грустный','2017-02-01',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Horses'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal'));
+
+INSERT Camels(Name, BirthDay, A_subtype, A_Type) VALUES
+('Толстый', '2022-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Camels'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal')),
+('Худой','2019-02-21',(SELECT Type_id FROM Pack_Animal WHERE Animal_type='Camels'), (SELECT Type_id FROM Animals WHERE Animal_type='Pack_Animal'));
+
+INSERT Cats(Name, BirthDay, A_subtype, A_Type) VALUES
+('Быстрая', '2019-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Cats'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets')),
+('Медленная','2018-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Cats'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets'));
+
+INSERT Dogs(Name, BirthDay, A_subtype, A_Type) VALUES
+('Муха', '2017-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Dogs'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets')),
+('Полкан','2021-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Dogs'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets'));
+
+INSERT Hamsters(Name, BirthDay, A_subtype, A_Type) VALUES
+('Хомяк-1', '2022-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Hamsters'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets')),
+('Хомяк-2','2016-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Hamsters'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets'));
+
+SELECT * FROM Cats;
+
+-- 10 задание----------------------------------------
+
+
 
