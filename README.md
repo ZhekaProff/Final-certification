@@ -54,4 +54,5 @@
    ![Задание](Scrinshots/4.jpg)
    * Удаление - sudo dpkg -r google-chrome-stable
 5. ![Задание](Scrinshots/5.jpg)
-6. 
+6. ![Задание](Scrinshots/Диограмма.drawio.png)
+7. 
