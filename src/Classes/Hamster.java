@@ -1,30 +1,30 @@
 package Classes;
 
-public class Cat extends Pet{
-
-    public Cat(String name, String birthday) {
+public class Hamster extends Pet{
+    public Hamster(String name, String birthday) {
         super(name, birthday);
     }
 
+
     @Override
     public String toString() {
-        return "Cat{" +
+        return "Hamster{" +
                 "name='" + super.getName() + '\'' +
                 ", birthday='" + super.getBirthday() + '\'' + '}';
     }
 
     @Override
     public void voice() {
-        System.out.println("Кот " + getName() + " кричит");
+        System.out.println("Хомяк " + getName() + " кричит");
     }
 
     @Override
     public void eat() {
-        System.out.println("Кот " + getName() + " ест");
+        System.out.println("Хомяк " + getName() + " жадно ест");
     }
 
     @Override
     public void sleep() {
-        System.out.println("Кот " + getName() + " спит");
+        System.out.println("Хомяк " + getName() + " спит");
     }
 }
