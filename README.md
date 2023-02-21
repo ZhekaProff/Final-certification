@@ -44,5 +44,14 @@
 ## Решение 
 1. ![Задание](Scrinshots/1.jpg)
 2. ![Задание](Scrinshots/2.jpg)
-3. 
-
+3. * wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+   * sudo dpkg - i mysql-apt-config_0.8.24-1_all.deb
+   * sudo apt-get update
+   * sudo apt install -f mysql-client=8.0.32-1ubuntu22.04 mysql-community-server=8.0.32-1ubuntu22.04 mysql-server=8.0.32-1ubuntu22.04
+     ![Задание](Scrinshots/3.jpg)
+4. * Скачиваю файл - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   * Установка - sudo dpkg -i google-chrome-stable_current_amd64.deb
+   ![Задание](Scrinshots/4.jpg)
+   * Удаление - sudo dpkg -r google-chrome-stable
+5. ![Задание](Scrinshots/5.jpg)
+6. 
