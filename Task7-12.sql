@@ -111,9 +111,31 @@ INSERT Hamsters(Name, BirthDay, A_subtype, A_Type) VALUES
 ('Хомяк-1', '2022-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Hamsters'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets')),
 ('Хомяк-2','2016-02-21',(SELECT Type_id FROM Pets WHERE Animal_type='Hamsters'), (SELECT Type_id FROM Animals WHERE Animal_type='Pets'));
 
-SELECT * FROM Cats;
+SELECT * FROM Camels;
 
--- 10 задание----------------------------------------
+-- 10 задание ----------------------------------------
+
+delete from Camels where Camel_id > 0;
+select * from Camels;
+
+create table Pack_Animal_new (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY)
+select  Name, 
+        BirthDay, 
+        A_subtype, 
+        A_Type
+from Horses union 
+select  Name,  
+        BirthDay,
+		A_subtype, 
+        A_Type
+from Donkeys;
+
+select * from Pack_Animal_new;
+
+-- 11 Задание ----------------------------------------
+
+select * from pets;
+
 
 
 
