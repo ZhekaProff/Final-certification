@@ -2,8 +2,10 @@ package Classes;
 
 public class Cat extends Pet{
 
+    boolean trained = true;
     public Cat(String name, String birthday) {
         super(name, birthday);
+
     }
 
     @Override
@@ -27,4 +29,21 @@ public class Cat extends Pet{
     public void sleep() {
         System.out.println("Кот " + getName() + " спит");
     }
+
+    @Override
+    public void training() {
+        this.trained = false;
+        System.out.println("Кот " + getName() + " Прошел тренировку");
+    }
+
+    @Override
+    public void specialMethod() {
+        if(trained){
+            System.out.println(getName() + " надо тренировать");
+        }
+        else
+            System.out.println("Кот " + getName() + " залазит в кострюлю");
+    }
+
+
 }

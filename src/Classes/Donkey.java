@@ -1,6 +1,7 @@
 package Classes;
 
 public class Donkey extends PackAnimal{
+    boolean trained = true;
     public Donkey(String name, String birthday) {
         super(name, birthday);
     }
@@ -26,5 +27,19 @@ public class Donkey extends PackAnimal{
     @Override
     public void sleep() {
         System.out.println("Donkey " + getName() + " спит");
+    }
+
+    @Override
+    public void training() {
+        this.trained = false;
+        System.out.println("Осел " + getName() + " Прошел тренировку");
+    }
+
+    public void specialMethod() {
+        if(trained){
+            System.out.println("Осла"+ getName() + "надо тренировать");
+        }
+        else
+            System.out.println("Осел " + getName() + " тупой ничего не делает");
     }
 }

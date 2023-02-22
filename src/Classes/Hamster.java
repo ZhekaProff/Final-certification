@@ -1,6 +1,7 @@
 package Classes;
 
 public class Hamster extends Pet{
+    boolean trained = true;
     public Hamster(String name, String birthday) {
         super(name, birthday);
     }
@@ -26,5 +27,19 @@ public class Hamster extends Pet{
     @Override
     public void sleep() {
         System.out.println("Хомяк " + getName() + " спит");
+    }
+
+    @Override
+    public void training() {
+        this.trained = false;
+        System.out.println("Хомяк " + getName() + " Прошел тренировку");
+    }
+
+    public void specialMethod() {
+        if(trained){
+            System.out.println("надо тренировать");
+        }
+        else
+            System.out.println("Хомяк " + getName() + " крутит колесо");
     }
 }

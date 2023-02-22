@@ -1,16 +1,12 @@
-import Classes.Cat;
-import Classes.Dog;
+
+import Classes.Zoo;
+import GUI.UI;
+
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
-        Cat cat = new Cat("Васька", "01-01-2021");
-        System.out.println(cat);
-        cat.voice();
-        cat.eat();
-        cat.sleep();
+    public static void main(String[] args) throws IOException {
+        UI.run();
 
-
-        Dog dog = new Dog("Мухтар", "01-02-2022");
-        dog.eat();
     }
 }

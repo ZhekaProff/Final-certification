@@ -1,6 +1,8 @@
 package Classes;
 
 public class Camel extends PackAnimal{
+
+    boolean trained = true;
     public Camel(String name, String birthday) {
         super(name, birthday);
     }
@@ -26,5 +28,19 @@ public class Camel extends PackAnimal{
     @Override
     public void sleep() {
         System.out.println("Camel " + getName() + " спит");
+    }
+
+    @Override
+    public void training() {
+        this.trained = false;
+        System.out.println("Верблюд " + getName() + " Прошел тренировку");
+    }
+    @Override
+    public void specialMethod() {
+        if(trained){
+            System.out.println(getName() + "надо тренировать");
+        }
+        else
+            System.out.println("Верблюд " + getName() + " плюнул");
     }
 }
