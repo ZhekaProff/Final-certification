@@ -7,8 +7,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static GUI.AnimalCount.variable;
+
 public class UI {
     private static Zoo zoo = new Zoo();
+
 
     private static final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private static boolean isWork = true;
@@ -23,20 +26,26 @@ public class UI {
     }
 
     private static void addAnimal() throws IOException {
-        System.out.println("Добавить кота     нажмите 1");
-        System.out.println("Добавить собаку   нажмите 2");
-        System.out.println("Добавить хомяка   нажмите 3");
-        System.out.println("Добавить лошадь   нажмите 4");
-        System.out.println("Добавить верюлюда нажмите 5");
-        System.out.println("Добавить осла     нажмите 6");
+        AnimalCount animalCount = new AnimalCount();
+        try(animalCount) {
+            animalCount.add();
+            System.out.println("Добавить кота     нажмите 1");
+            System.out.println("Добавить собаку   нажмите 2");
+            System.out.println("Добавить хомяка   нажмите 3");
+            System.out.println("Добавить лошадь   нажмите 4");
+            System.out.println("Добавить верюлюда нажмите 5");
+            System.out.println("Добавить осла     нажмите 6");
 
-        switch (Integer.parseInt(reader.readLine())) {
-            case (1) -> zoo.addAnimal("Cat");
-            case (2) -> zoo.addAnimal("Dog");
-            case (3) -> zoo.addAnimal("Hamster");
-            case (4) -> zoo.addAnimal("Horse");
-            case (5) -> zoo.addAnimal("Camel");
-            case (6) -> zoo.addAnimal("Donkey");
+            switch (Integer.parseInt(reader.readLine())) {
+                case (1) -> zoo.addAnimal("Cat");
+                case (2) -> zoo.addAnimal("Dog");
+                case (3) -> zoo.addAnimal("Hamster");
+                case (4) -> zoo.addAnimal("Horse");
+                case (5) -> zoo.addAnimal("Camel");
+                case (6) -> zoo.addAnimal("Donkey");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
     }
 
@@ -54,18 +63,20 @@ public class UI {
             case (4) -> zoo.allSpecialMethod();
         }
     }
+
     public static void trainigAnimal() throws IOException {
         System.out.print("Напишите имя кого хотите тренировать: ");
         zoo.tre(reader.readLine());
     }
+
     public static void run() throws IOException {
         System.out.println("Добро пожаловать в питомник!");
-        while (isWork){
+        while (isWork) {
             int operation = getOperation();
-            switch (operation){
+            switch (operation) {
                 case (1) -> addAnimal();
                 case (2) -> listOfCommands();
-                case (3) -> trainigAnimal();
+                case (3) -> trainigAnimal(); //System.out.println(variable); проверял класс AnimalCount
                 case (0) -> isWork = false;
             }
         }
